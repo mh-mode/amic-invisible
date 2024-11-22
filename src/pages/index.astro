@@ -1,0 +1,68 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="p-0 m-0">
+
+		<div class="w-full max-w-6xl mx-auto px-4 py-12">
+			<h1 class="text-8xl font-bold text-center mb-12">Amic Invisible</h1>
+
+			<div class="relative flex justify-center items-center my-8 mb-16 overflow-hidden rounded-[20px] object-cover">
+				<img class="aspect-video" src="/public//christmas24-medium.jpg" alt="Christmas Photo" />
+				<p class="absolute text-[7vw] leading-none font-bold text-white text-center z-10 mb-4 md:mb-12">Familia<br />GURG</p>
+			</div>
+
+			<div class="mx-auto max-w-4xl">
+				<h2 class="text-3xl text-center">Introdueix el nom de la persona que t'ha tocat</h2>
+
+				<div class="my-12 mx-auto max-w-lg">
+					<form action="/" class="flex items-center justify-center gap-2" id="form">
+						<input id="nameInput" name="name" value="" type="text" placeholder="Escriu el nom" class="bg-gray-200 border-none rounded-lg px-3 py-1.5 w-full flex-grow" />
+						<button id="submit" type="submit" class="rounded-lg bg-red-600 text-white text-center py-1.5 px-5 text-base">Introdueix</button>
+					</form>
+				</div>
+
+
+				<section id="presents">
+					<h1 class="text-8xl my-4"></h1>
+					<ul></ul>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	import {getPerson} from '../data/people';
+
+	// const submitButton = document.getElementById('submit');
+	const form = document.getElementById('form') as HTMLFormElement;
+	// const input = document.getElementById('nameInput');
+	// submitButton?.addEventListener('click', () => {
+
+	// })
+	form?.addEventListener('submit', (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(form);
+		
+		const searchName = formData.get('name');
+
+		const person = getPerson(searchName?.toString() ?? '');
+
+		if (person) {
+			alert(person.name)
+		} else {
+			alert('Not found')
+		}
+
+	})
+</script>
