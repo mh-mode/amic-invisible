@@ -67,10 +67,10 @@
 		// show presents section
 		
 		presentsSection.classList.add('block');
+		presentsSection.classList.remove('hidden');
 		presentsSection.scrollIntoView({
 			behavior: 'smooth'
 		})
-		presentsSection.classList.remove('hidden');
 		setTimeout(() => {
 			presentsSection.classList.remove('opacity-0');
 		}, 500);
@@ -86,7 +86,7 @@
 		if (person) {
 			showPresents(person);
 		} else {
-			alert(`Sorry, could not find ${searchName}. Please try again!`);
+			alert(`Perdona, no trobo la persona que busques! Introdueix un nom vàlid.`);
 		}
 
 	})
