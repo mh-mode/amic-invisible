@@ -1,47 +1,45 @@
-type Person = {
+export type Person = {
   id: string;
-  name: string;
+  names: string[];
   presents: string[];
 };
 
 const family1: Person[] = [
-  { id: "", name: "", presents: [""] },
-  { id: "Elisa", name: "", presents: [] },
-  { id: "Sofia", name: "", presents: [] },
-  { id: "Victor", name: "", presents: [] },
-  { id: "Mariona", name: "", presents: [] },
-  { id: "Nuria (petita)", name: "", presents: [] },
-  { id: "Alex (petit)", name: "", presents: [] },
-  { id: "Silvia", name: "", presents: [] },
-  { id: "Alex (gran)", name: "", presents: [] },
-  { id: "Alba", name: "", presents: [] },
-  { id: "Aitana", name: "", presents: [] },
-  { id: "Darryl", name: "", presents: [] },
-  { id: "Marta", name: "", presents: [] },
+  { id: "Elisa", names: ["elisa"], presents: [] },
+  { id: "Sofia", names: ["sofia"], presents: [] },
+  { id: "Victor", names: ["victor"], presents: [] },
+  { id: "Mariona", names: ["mariona"], presents: [] },
+  { id: "Nuria (petita)", names: ["nuria pepita"], presents: [] },
+  { id: "Alex (petit)", names: ["alex petit"], presents: [] },
+  { id: "Silvia", names: ["silvia"], presents: [] },
+  { id: "Alex (gran)", names: ["alex gran"], presents: [] },
+  { id: "Alba", names: ["alba"], presents: [] },
+  { id: "Aitana", names: ["aitana"], presents: [] },
+  { id: "Darryl", names: ["darryl"], presents: [] },
+  { id: "Marta", names: ["marta"], presents: ["A pony", "Some chocolates"] },
 ];
 const fmaily2: Person[] = [
-  { id: "Feli (o FELISA)", name: "", presents: [] },
-  { id: "Josep", name: "", presents: [] },
-  { id: "Gemma", name: "", presents: [] },
-  { id: "Íria", name: "", presents: [] },
-  { id: "Nuria (gran)", name: "", presents: [] },
-  { id: "Xavi", name: "", presents: [] },
-  { id: "Lucia", name: "", presents: [] },
-  { id: "Leo", name: "", presents: [] },
+  { id: "Feli", names: ["feli", "felisa"], presents: [] },
+  { id: "Josep", names: ["josep"], presents: [] },
+  { id: "Gemma", names: ["gemma"], presents: [] },
+  { id: "Íria", names: ["iria"], presents: [] },
+  { id: "Nuria (gran)", names: ["nuria gran"], presents: [] },
+  { id: "Xavi", names: ["xavi"], presents: [] },
+  { id: "Lucia", names: ["lucia"], presents: [] },
+  { id: "Leo", names: ["leo"], presents: [] },
 ];
-
 const family3: Person[] = [
-  { id: "", name: "Pepe (o JOSÉ)", presents: [] },
-  { id: "", name: "Ana (o ANNA)", presents: [] },
-  { id: "", name: "Lilian", presents: [] },
-  { id: "", name: "Dania", presents: [] },
-  { id: "", name: "Yanina", presents: [] },
+  { id: "Pepe", names: ["pepe", "jose"], presents: [] },
+  { id: "Ana", names: ["ana", "anna"], presents: [] },
+  { id: "Lilian", names: ["Lilian"], presents: [] },
+  { id: "Dania", names: ["Dania"], presents: [] },
+  { id: "Yanina", names: ["Yanina"], presents: [] },
 ];
 const family4: Person[] = [
-  { id: "", name: "Montse", presents: [] },
-  { id: "", name: "Artur", presents: [] },
-  { id: "", name: "David", presents: [] },
-  { id: "", name: "Aleix", presents: [] },
+  { id: "Montse", names: ["Montse"], presents: [] },
+  { id: "Artur", names: ["Artur"], presents: [] },
+  { id: "David", names: ["David"], presents: [] },
+  { id: "Aleix", names: ["Aleix"], presents: [] },
 ];
 
 export const PEOPLE_LIST: Person[] = [
@@ -52,7 +50,12 @@ export const PEOPLE_LIST: Person[] = [
 ];
 
 export const getPerson = (name: string) => {
-  return PEOPLE_LIST.find(
-    (person) => person.name.toLowerCase() === name.trim().toLowerCase()
-  );
+  const searchName = name.trim().toLowerCase();
+  const person = PEOPLE_LIST.find((p) => {
+    if (p.names.indexOf(searchName) > -1) {
+      return p;
+    }
+    return undefined;
+  });
+  return person;
 };
