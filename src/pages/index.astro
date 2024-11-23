@@ -12,28 +12,27 @@
 	</head>
 	<body class="p-0 m-0 h-full">
 
-		<div class="w-full max-w-6xl mx-auto px-4 py-8 md:py-12">
-			<h1 class="text-6xl md:text-8xl font-semibold font-serif tracking-tighter text-center mb-6 md:mb-12">Amic Invisible</h1>
+		<div class="w-full max-w-5xl mx-auto px-4 py-8 md:py-12">
+			<h1 class="text-6xl md:text-8xl font-semibold font-serif tracking-tight text-center mb-6 md:mb-12">🎅 Amic Invisible</h1>
 
 			<div class="relative flex justify-center items-center my-8 md:mb-16 overflow-hidden rounded-[20px] object-cover">
-				<img class="aspect-video" src="/public//christmas24-medium.jpg" alt="Christmas Photo" />
-				<p class="absolute text-[8vw] font-serif leading-none font-semibold tracking-tighter text-white text-center z-10 mb-4 md:mb-12">Familia<br />GURG</p>
+				<img class="aspect-video" src="/christmas24-medium.jpg" alt="Christmas Photo" />
+				<p class="absolute text-[6vw] font-serif leading-none font-semibold tracking-tight text-white text-center z-10 mb-4 md:mb-12">Familia<br />GURG</p>
 			</div>
 
 			<div class="mx-auto max-w-4xl">
-				<h2 class="text-3xl text-center">Introdueix el nom de la persona que t'ha tocat</h2>
+				<h2 class="text-3xl md:text-center font-serif">Introdueix el nom de la persona que t'ha tocat</h2>
 
-				<div class="my-12 mx-auto max-w-lg">
+				<div class="my-6 md:my-12 mx-auto max-w-lg">
 					<form action="/" class="flex items-center justify-center gap-2" id="form">
-						<input id="nameInput" name="name" value="marta" type="text" placeholder="Escriu el nom" class="bg-gray-200 border-none rounded-lg px-4 py-2 w-full flex-grow" />
-						<button id="submit" type="submit" class="rounded-lg bg-red-600 text-white text-center py-2 px-4 text-base">Introdueix</button>
+						<input id="nameInput" name="name" value="" type="text" spellcheck="false" placeholder="Escriu el nom" class="bg-gray-200 border-none rounded-lg px-4 py-2 w-full flex-grow" />
+						<button id="submit" type="submit" class="rounded-lg bg-red-600 text-white text-center py-2 px-4 text-base font-serif">Introdueix</button>
 					</form>
 				</div>
-
 				
-				<section id="presents" class="max-w-xl mx-auto block transition-opacity ease-in-out duration-700 opacity-0">
-					<h1 class="text-3xl my-6 text-center"></h1>
-					<ol class="list-decimal pl-8"></ol>
+				<section id="presents" class="max-w-xl mx-auto block transition-opacity ease-in-out duration-700 opacity-0 my-12">
+					<h1 class="text-3xl my-6 md:text-center font-serif"></h1>
+					<ol class="list-decimal pl-8 font-serif"></ol>
 				</section>
 				<div class="h-40"></div>
 			</div>
@@ -80,8 +79,10 @@
 		event.preventDefault();
 
 		const formData = new FormData(form);
-		const searchName = formData.get('name');
-		const person = getPerson(searchName?.toString() ?? '');
+		const nameField = formData.get('name');
+		const searchValue = nameField?.toString() ?? '';
+		if (!searchValue) return;
+		const person = getPerson(searchValue);
 
 		if (person) {
 			showPresents(person);
