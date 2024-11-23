@@ -2,7 +2,7 @@
 
 ---
 
-<html lang="en">
+<html lang="en" class="h-full overflow-auto">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,7 +10,7 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="p-0 m-0">
+	<body class="p-0 m-0 h-full">
 
 		<div class="w-full max-w-6xl mx-auto px-4 py-8 md:py-12">
 			<h1 class="text-6xl md:text-8xl font-semibold font-serif tracking-tighter text-center mb-6 md:mb-12">Amic Invisible</h1>
@@ -20,7 +20,7 @@
 				<p class="absolute text-[8vw] font-serif leading-none font-semibold tracking-tighter text-white text-center z-10 mb-4 md:mb-12">Familia<br />GURG</p>
 			</div>
 
-			<div class="mx-auto max-w-4xl mb-16 md:mb-32">
+			<div class="mx-auto max-w-4xl">
 				<h2 class="text-3xl text-center">Introdueix el nom de la persona que t'ha tocat</h2>
 
 				<div class="my-12 mx-auto max-w-lg">
@@ -30,11 +30,12 @@
 					</form>
 				</div>
 
-
-				<section id="presents" class="max-w-xl mx-auto block">
-					<h1 class="text-3xl my-4 text-center"></h1>
+				
+				<section id="presents" class="max-w-xl mx-auto block transition-opacity ease-in-out duration-700 opacity-0">
+					<h1 class="text-3xl my-6 text-center"></h1>
 					<ol class="list-decimal pl-8"></ol>
 				</section>
+				<div class="h-40"></div>
 			</div>
 		</div>
 	</body>
@@ -47,7 +48,8 @@
 	const presentsSection = document.getElementById('presents') as HTMLElement;
 
 	function showPresents(person: Person) {
-		
+		presentsSection.classList.add('hidden');
+		presentsSection.classList.add('opacity-0');
 		const listElem = presentsSection.querySelector('ol') as HTMLOListElement;
 		const headingElem = presentsSection.querySelector('h1') as HTMLHeadingElement;
 		while(listElem.firstChild) { // clear old <li> elems
@@ -63,7 +65,15 @@
 		// make heading
 		headingElem.innerHTML = `Idees per <strong>${person.id}</strong> són:`;
 		// show presents section
+		
 		presentsSection.classList.add('block');
+		presentsSection.scrollIntoView({
+			behavior: 'smooth'
+		})
+		presentsSection.classList.remove('hidden');
+		setTimeout(() => {
+			presentsSection.classList.remove('opacity-0');
+		}, 500);
 	}
 
 	form?.addEventListener('submit', (event) => {

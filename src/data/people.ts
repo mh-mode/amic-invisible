@@ -15,7 +15,7 @@ const family1: Person[] = [
   { id: "Alex (gran)", names: ["alex gran"], presents: [] },
   { id: "Alba", names: ["alba"], presents: [] },
   { id: "Aitana", names: ["aitana"], presents: [] },
-  { id: "Darryl", names: ["darryl"], presents: [] },
+  { id: "Darryl", names: ["darryl"], presents: ["A playstation"] },
   { id: "Marta", names: ["marta"], presents: ["A pony", "Some chocolates"] },
 ];
 const fmaily2: Person[] = [
