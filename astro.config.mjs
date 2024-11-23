@@ -9,4 +9,6 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  base: '/amic-invisible', // github pages has a sub-folder as the repo name
+  trailingSlash: 'never',
 });
