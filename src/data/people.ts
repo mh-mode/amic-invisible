@@ -38,7 +38,7 @@ const family1: Person[] = [
     id: "Alex (petit)",
     names: ["alex petit", "alex valls"],
     presents: [
-      'Comic o llibre, llegeix bastant. Però! que no sigui ni de Goku-Bola de drac, ni de "One Piece"',
+      'Comic o llibre, llegeix bastant. Però! que no sigui ni de "Goku-Bola de drac" ni de "One Piece"',
     ],
   },
   {
