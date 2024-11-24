@@ -23,14 +23,24 @@ const family1: Person[] = [
       "Una O dues tovalloles petites per eixugar-se les mans. Tovalloles de cortesia pel bany",
     ],
   },
-  { id: "Victor", names: ["victor"], presents: [""] },
-  { id: "Mariona", names: ["mariona"], presents: [""] },
+  {
+    id: "Victor",
+    names: ["victor"],
+    presents: ["Samarreta XXL que faci gràcia"],
+  },
+  { id: "Mariona", names: ["mariona"], presents: ["Llibre novela negre"] },
   {
     id: "Nuria (petita)",
     names: ["nuria petita", "nuria valls"],
-    presents: [""],
+    presents: ["Jeryse de Nadal 12 anys-145cm"],
   },
-  { id: "Alex (petit)", names: ["alex petit", "alex valls"], presents: [""] },
+  {
+    id: "Alex (petit)",
+    names: ["alex petit", "alex valls"],
+    presents: [
+      'Comic o llibre, llegeix bastant. Però! que no sigui ni de Goku-Bola de drac, ni de "One Piece"',
+    ],
+  },
   {
     id: "Silvia",
     names: ["silvia"],
