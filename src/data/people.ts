@@ -18,7 +18,7 @@ const family1: Person[] = [
     id: "Sofia",
     names: ["sofia"],
     presents: [
-      "Uns mitjons antilliscants.T.39",
+      "Uns mitjons antilliscants T.39",
       "Uns guants talla mitjana",
       "Una O dues tovalloles petites per eixugar-se les mans. Tovalloles de cortesia pel bany",
     ],
@@ -28,11 +28,15 @@ const family1: Person[] = [
     names: ["victor"],
     presents: ["Samarreta XXL que faci gràcia"],
   },
-  { id: "Mariona", names: ["mariona"], presents: ["Llibre novela negre"] },
+  {
+    id: "Mariona",
+    names: ["mariona"],
+    presents: ["Llibre novela negre", "un targeter"],
+  },
   {
     id: "Nuria (petita)",
     names: ["nuria petita", "nuria valls"],
-    presents: ["Jeryse de Nadal 12 anys-145cm"],
+    presents: ["Jersei de Nadal 12 anys-145 cm"],
   },
   {
     id: "Alex (petit)",
@@ -97,14 +101,14 @@ const fmaily2: Person[] = [
     names: ["feli", "felisa"],
     presents: [
       "Punts de llibre. Qualsevol, en faig col·lecció!",
-      "Arracades de clip→ NO tinc forats",
+      "Arracades de clip → NO tinc forats",
     ],
   },
   { id: "Josep", names: ["josep"], presents: ["Un llibre àntic, petit i bo!"] },
   {
     id: "Gemma",
     names: ["gemma"],
-    presents: ["Necesser petit", "Una tassa per te"],
+    presents: ["Necesser petit", "Una tassa per el te"],
   },
   {
     id: "Oriol",
@@ -207,14 +211,14 @@ const family4: Person[] = [
   {
     id: "David",
     names: ["david"],
-    presents: ["Un llibre", "Uns mitjons T.45", "Un buff", "Un mini bonsai"],
+    presents: ["Un llibre", "Uns mitjons, T.45", "Un buff", "Un mini bonsai"],
   },
   {
     id: "Aleix",
     names: ["aleix"],
     presents: [
       "Bossa sencilla d'esport o motxilla",
-      "Mitjons T.40",
+      "Un mitjons, T.40",
       "Una samarreta",
     ],
   },
